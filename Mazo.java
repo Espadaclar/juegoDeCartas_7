@@ -37,7 +37,15 @@ class Mazo {
     }
     
     /**
-     *  muestra linea a linea todas los nombres de las cartas existentes en el mazo ------------------------ 2.
+     * devuelva un objeto Carta. Concretamente debe devolver la primera 
+     * carta del mazo, eliminando esta del mazo.----------------------------------------------------------- 2
+     */
+    public Carta sacarCarta(){
+        return cartas.remove(0);
+    }
+    
+    /**
+     *  muestra linea a linea todas los nombres de las cartas existentes en el mazo ------------------------ 76.
      */
     public void verCartasDelMazo(){
          int cont = 1;
