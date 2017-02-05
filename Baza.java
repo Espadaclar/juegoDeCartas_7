@@ -36,5 +36,17 @@ class Baza {
         bazasDelJugador.add(carta);//----  añade cartas a la baza.
         nombreJugador = nombreJ;
     }
+    
+     /**
+     * devuelva un entero que representa el palo de la primera carta añadida a la 
+     * baza o -1 en caso de que no se haya añadido aún ninguna carta
+     */
+    public int getPaloPrimeraCartaDeLaBaza(){
+        int palo = -1;
+        if( !bazasDelJugador.isEmpty() ){
+            palo = bazasDelJugador.get(0).getPalo();
+        }
+        return palo;
+    }
 }
 
