@@ -5,9 +5,9 @@
 class Carta {
     private int valor;//indica el valor de la carta y puede ser desde 1 a 7 o desde 10 a 12
     private int palo;//indica el palo de la carta y puede ser de 0 a 3 (0 es oros, 
-                        //1 es copas, 2 es espadas y 3 es bastos)
+    //1 es copas, 2 es espadas y 3 es bastos)
     private int cambiaValor; // para modificar  el valor en las cartas As y tres.
-    
+
     /**
      * constructor para inicializar los atributos.
      * @param valor
@@ -33,25 +33,25 @@ class Carta {
     public int getPalo() {
         return palo;
     }
-    
+
     /**
      * pone nombre a las cartas con valor 1, 10, 11, y 12 ------------------------------------------ 3
      */
-     public String getNombreValor() {
-         String nomValor = String.valueOf(valor);
-         if(valor == 1){
-             nomValor = "as de ";
-         }
-         else if(valor == 10){
-             nomValor = "sota de ";
-         }
-         else if(valor == 11){
-             nomValor = "caballo de ";
-         }
-         else if(valor == 12){
-             nomValor = "rey de ";
-         }
-         
+    public String getNombreValor() {
+        String nomValor = String.valueOf(valor);
+        if(valor == 1){
+            nomValor = "as de ";
+        }
+        else if(valor == 10){
+            nomValor = "sota de ";
+        }
+        else if(valor == 11){
+            nomValor = "caballo de ";
+        }
+        else if(valor == 12){
+            nomValor = "rey de ";
+        }
+
         return nomValor;
     }
 
@@ -60,19 +60,19 @@ class Carta {
      * espadas para el 2 y bastos para el 3.        -------------------------------------------------- 4
      */
     public String getNombrePalo() {
-         String nomPalo = String.valueOf(valor);
-         if(palo == 0){
-             nomPalo = "oros ";
-         }
-         else if(palo == 1){
-             nomPalo = "copas ";
-         }
-         else if(palo == 2){
-             nomPalo = "espadas ";
-         }
-         else if(palo == 3){
-             nomPalo = "bastos ";
-         }
+        String nomPalo = String.valueOf(valor);
+        if(palo == 0){
+            nomPalo = "oros ";
+        }
+        else if(palo == 1){
+            nomPalo = "copas ";
+        }
+        else if(palo == 2){
+            nomPalo = "espadas ";
+        }
+        else if(palo == 3){
+            nomPalo = "bastos ";
+        }
         return nomPalo;
     }
 
@@ -81,8 +81,8 @@ class Carta {
      * como parámetro conforme a las reglas del tute.----------------------------------------------- 5
      * @return 
      */
-        public boolean ganaA(Carta carta, int paloQuePinta){
-        
+    public boolean ganaA(Carta carta, int paloQuePinta){
+
         boolean cartaGanadora = false;
         if(palo == carta.getPalo() && modificaValor() > carta.modificaValor()){
             cartaGanadora = true;
@@ -92,7 +92,7 @@ class Carta {
         }
         return cartaGanadora;
     }
-    
+
     /**
      * mt para modificar  el valor en las cartas As y tres.
      * @return 
@@ -107,30 +107,15 @@ class Carta {
         }
         return cambiaValor;
     }
-    
+
     @Override
     public String toString() {
         String valor = getNombreValor() ;
         String palo = getNombrePalo();
         return valor+ " " + palo ;
     }
-    
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

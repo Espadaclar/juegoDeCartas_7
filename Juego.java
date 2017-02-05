@@ -53,7 +53,7 @@ class Juego {
         //el nameJugadorHumano será el primero de la colección de jugadores;
         Jugador jugadorH = new Jugador(nameJugadorHumano);
         jugadores.add(jugadorH);
-        
+
         // el  bucle for crea el nº de jugadores pasado como parámetro, y los almacena.
         for( int i = 1; i < numJugadores; i++ ) {//-----i = 1, porque hemos añadido ya al jugadorHumano.
             nameJugador = creaNombreAleatorio(); // ------creaNombreAleatorio() mt___11.
@@ -128,7 +128,7 @@ class Juego {
     public void verCartasJugadorHumano(){
         verCartasJugador(nameJugadorHumano); //------------ invoca al mt________78.
     }
-    
+
     /**
      * mt para asignar un nombre al jugador, de forma
      * aleatoria.------------------------------------------------- 11
@@ -170,7 +170,7 @@ class Juego {
             contJugadores++;
         }
     }
-    
+
     /**
      * muestra por pantalla las cartas de un jugador. Para saber qué jugador
      * mostrar, indicamos como parámetro del método el nombre del Jugador    *************************************************  78
@@ -187,5 +187,4 @@ class Juego {
         }
     }
 }
-
 
