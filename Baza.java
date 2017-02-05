@@ -48,5 +48,31 @@ class Baza {
         }
         return palo;
     }
+    
+    /**
+     * devuelva un objeto Carta. Este objeto carta es la carta que va ganando la baza
+     * conforme a las normas del julepe. En caso de que la baza este 
+     * vacía este método devuelve null.
+     */
+    public Carta cartaQueVaGanandoLaBaza(Carta cartaG){
+        Carta cartaGanadora = null;
+        int cont = 0;
+        while(cont < numJugadores){// ---para que no se jueguen más cartas que jugadores en cada baza.
+            if( getPaloPrimeraCartaDeLaBaza() == -1 ){
+                cartaGanadora = null;
+            }
+            else{//--------- entoces sí tenemos cartas en la colección,
+                if(bazasDelJugador.get(0).ganaA(cartaG, paloQuePinta)){
+                    cartaGanadora = bazasDelJugador.get(0);
+                }
+                else{
+                    cartaGanadora = cartaG;
+                }
+            } 
+            cont ++;
+        }
+        return cartaGanadora;
+    }
+
 }
 
