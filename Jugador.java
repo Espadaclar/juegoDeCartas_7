@@ -16,12 +16,19 @@ class Jugador {
 
     /**
      * recibe una carta pasada por parámetro.
-     *
      * @param recibirCarta
      */
-    public void recibirCarta(Carta recibirCarta) {
-        cartasDelJugador[numCartaRecibidas] = recibirCarta;
-        numCartaRecibidas++;
+    public void recibirCarta(Carta recibeCarta) {
+        int cont = 0;
+        boolean encontrado = false;
+        while(cont < cartasDelJugador.length && !encontrado){
+            if(cartasDelJugador[cont] == null){
+                cartasDelJugador[cont] = recibeCarta;
+                encontrado = true;
+            }
+            cont ++;
+            numCartaRecibidas++;
+        }
     }
 
     /**
@@ -45,3 +52,23 @@ class Jugador {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

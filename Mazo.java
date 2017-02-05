@@ -41,7 +41,8 @@ class Mazo {
      * carta del mazo, eliminando esta del mazo.----------------------------------------------------------- 2
      */
     public Carta sacarCarta(){
-        return cartas.remove(0);
+        Carta primeraCarta = cartas.remove(0); 
+        return primeraCarta;
     }
     
     /**
