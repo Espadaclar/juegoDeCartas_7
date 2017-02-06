@@ -74,5 +74,8 @@ class Baza {
         return cartaGanadora;
     }
 
+    public String gitNameJugador(){
+        return nombreJugador;
+    }
 }
 
