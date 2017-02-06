@@ -38,7 +38,7 @@ class Carta {
      * pone nombre a las cartas con valor 1, 10, 11, y 12 ------------------------------------------ 3
      */
     public String getNombreValor() {
-        String nomValor = String.valueOf(valor);
+        String nomValor = String.valueOf(valor+ " de");
         if(valor == 1){
             nomValor = "as de ";
         }

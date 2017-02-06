@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  * franciscoJ
  */
@@ -16,7 +17,7 @@ class Jugador {
 
     /**
      * recibe una carta pasada por parámetro.
-     * @param recibirCarta
+     * @param recibirCarta -------------------------------------------------------------------------------------------- 1
      */
     public void recibirCarta(Carta recibeCarta) {
         int cont = 0;
@@ -32,7 +33,7 @@ class Jugador {
     }
 
     /**
-     * imprima por pantalla las cartas del jugador,
+     * imprima por pantalla las cartas del jugador,---------------------------------------------------------------------- 2
      */
     public void verCartasJugador() {
         for (int i = 0; i < cartasDelJugador.length; i++) {
@@ -44,34 +45,67 @@ class Jugador {
 
     /**
      * El método muestra por pantalla el nombre del jugador que ha tirado la carta
-     * y la carta tirada. Devuelve la carta tirada
-     * @param String que indica el nombre de la carta a tirar
+     * y la carta tirada. Devuelve la carta tirada. En caso de que el jugador no 
+     * tenga cartas o de que el nombre especificado como parámetro no coincida 
+     * con ninguna carta, devuelve null
+     * @param String que indica el nombre de la carta a tirar       ------------------------------------------------------- 3
      */
     public Carta tirarCarta(String nameCarta){
         Carta cartaTirada = null;
-        if(numCartaRecibidas > 0){
+        if(numCartaRecibidas > 0){ // si el jugador tiene cartas en la mano.
             int cont = 0;
             boolean encontrado = false;
             while(cont < cartasDelJugador.length && !encontrado){
                 if(cartasDelJugador[cont] != null ){
                     if( cartasDelJugador[cont].toString().equals(nameCarta)){
-                        cartaTirada = cartasDelJugador[cont];
+                        cartaTirada = cartasDelJugador[cont]; // si son iguales, almaceno la carta para devolverla.
+                        cartasDelJugador[cont] = null; // la anulo de la posición donde estaba.
                         encontrado = true;
-                        numCartaRecibidas--;
+                        numCartaRecibidas--;// descuento una carta al total que tiene el jugador.
                     }
                 }
                 cont ++;
             }
             if( cartaTirada != null){
                 System.out.println("Carta jugada por.-  " +nameJugador
-                    + "\n================= " +cartaTirada.toString());
+                    + "\n================= " +cartaTirada);
             }
         }
         return cartaTirada;
     }
 
     /**
-     * devuelve el nombre del jugador.
+     * muestra por pantalla el nombre del jugador que ha tirado la carta y la carta tirada.
+     * Devuelve la carta tirada. En caso de que el jugador no tenga cartas, devuelve null. ------------------------------- 4
+     */
+     public Carta tirarCartAleatoria() {
+        Carta cartaTirada = null;
+        if (numCartaRecibidas > 0) {
+            // montamos un bucle para recorrer el arrays de cartas.
+            int cont = 0;
+            boolean encontrado = false;
+            while (cont < cartasDelJugador.length && !encontrado) {
+                Random ale = new Random();
+                int aux = ale.nextInt(cartasDelJugador.length);
+                if (cartasDelJugador[aux] != null) {
+                    cartaTirada = cartasDelJugador[aux];
+                    cartasDelJugador[aux] = null;
+                    numCartaRecibidas--;// descuento una carta al total que tiene el jugador.
+                }
+                cont++;
+            }
+
+        }
+        if (cartaTirada != null) {
+            System.out.println("Carta jugada por.-  " + nameJugador
+                    + "\n================= " + cartaTirada);
+        }
+        return cartaTirada;
+    }
+
+    
+    /**
+     * devuelve el nombre del jugador.                      ---------------------------------------------------------------- 5
      */
     public String getNameJugador() {
         return nameJugador;
