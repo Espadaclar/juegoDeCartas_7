@@ -30,7 +30,7 @@ class Baza {
      * El primer parámetro representa la carta que tira un jugador a la mesa y que, por 
      * tanto, se añade a la baza. No hace falta comprobar que la carta añadida 
      * sea o no null, se supone que es una carta. El segundo parámetro indica el
-     * nombre del jugador que tiro la carta
+     * nombre del jugador que tiro la carta-------------------------------------------------------- 1
      */
     public void addCarta(Carta carta, String nombreJ){
         bazasDelJugador.add(carta);//----  añade cartas a la baza.
@@ -39,7 +39,7 @@ class Baza {
     
      /**
      * devuelva un entero que representa el palo de la primera carta añadida a la 
-     * baza o -1 en caso de que no se haya añadido aún ninguna carta
+     * baza o -1 en caso de que no se haya añadido aún ninguna carta ------------------------------ 2
      */
     public int getPaloPrimeraCartaDeLaBaza(){
         int palo = -1;
@@ -52,7 +52,7 @@ class Baza {
     /**
      * devuelva un objeto Carta. Este objeto carta es la carta que va ganando la baza
      * conforme a las normas del julepe. En caso de que la baza este 
-     * vacía este método devuelve null.
+     * vacía este método devuelve null. ------------------------------------------------------------ 3
      */
     public Carta cartaQueVaGanandoLaBaza(Carta cartaG){
         Carta cartaGanadora = null;

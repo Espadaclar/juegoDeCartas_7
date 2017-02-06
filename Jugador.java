@@ -3,13 +3,13 @@
  */
 class Jugador {
 
-    private String name;
+    private String nameJugador;
     private Carta[] cartasDelJugador;
     // cuenta las cartas recibidas.
     private int numCartaRecibidas;
 
-    public Jugador(String name) {
-        this.name = name;
+    public Jugador(String nameJugador) {
+        this.nameJugador = nameJugador;
         cartasDelJugador = new Carta[5];
         numCartaRecibidas = 0;
     }
@@ -43,32 +43,50 @@ class Jugador {
     }
 
     /**
-     * devuelve el nombre del jugador.
-     *
-     * @return
+     * El método muestra por pantalla el nombre del jugador que ha tirado la carta
+     * y la carta tirada. Devuelve la carta tirada
+     * @param String que indica el nombre de la carta a tirar
      */
-    public String getNameJugador() {
-        return name;
+    public Carta tirarCarta(String nameCarta){
+        Carta cartaTirada = null;
+        if(numCartaRecibidas > 0){
+            int cont = 0;
+            boolean encontrado = false;
+            while(cont < cartasDelJugador.length && !encontrado){
+                if(cartasDelJugador[cont] != null ){
+                    if( cartasDelJugador[cont].toString().equals(nameCarta)){
+                        cartaTirada = cartasDelJugador[cont];
+                        encontrado = true;
+                        numCartaRecibidas--;
+                    }
+                }
+                cont ++;
+            }
+            if( cartaTirada != null){
+                System.out.println("Carta jugada por.-  " +nameJugador
+                    + "\n================= " +cartaTirada.toString());
+            }
+        }
+        return cartaTirada;
     }
 
+    /**
+     * devuelve el nombre del jugador.
+     */
+    public String getNameJugador() {
+        return nameJugador;
+    }
+
+    /**
+     * un jugador pueda decidir inteligentemente que carta tirar
+     * @param int, palo de la primer carta
+     * @param Carta, el valor y palo de la carta que va ganando
+     * @param int , palo que pinta.
+     */
+    public void tirarCartaInteligentemente(int paloPrimerCarta, Carta carta, int paloQuePinta){
+
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

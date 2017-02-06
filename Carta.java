@@ -43,13 +43,13 @@ class Carta {
             nomValor = "as de ";
         }
         else if(valor == 10){
-            nomValor = "sota de ";
+            nomValor = "sota de";
         }
         else if(valor == 11){
-            nomValor = "caballo de ";
+            nomValor = "caballo de";
         }
         else if(valor == 12){
-            nomValor = "rey de ";
+            nomValor = "rey de";
         }
 
         return nomValor;
@@ -62,16 +62,16 @@ class Carta {
     public String getNombrePalo() {
         String nomPalo = String.valueOf(valor);
         if(palo == 0){
-            nomPalo = "oros ";
+            nomPalo = "oros";
         }
         else if(palo == 1){
-            nomPalo = "copas ";
+            nomPalo = "copas";
         }
         else if(palo == 2){
-            nomPalo = "espadas ";
+            nomPalo = "espadas";
         }
         else if(palo == 3){
-            nomPalo = "bastos ";
+            nomPalo = "bastos";
         }
         return nomPalo;
     }
